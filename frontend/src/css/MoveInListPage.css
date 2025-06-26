@@ -1,0 +1,113 @@
+.movein-container {
+  display: flex;
+  gap: 30px;
+  padding: 40px;
+  color: black;
+}
+
+.sidebar-box {
+  background: white;
+  color: black;
+  padding: 20px 30px;
+  border-radius: 16px;
+  font-size: 18px;
+  min-width: 160px;
+  height: 100%;
+  border: 1px solid #ddd; /* ✅ 보더 추가로 구분감 */
+}
+
+.main-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.top-header {
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-primary {
+  padding: 10px 20px;
+  background-color: #4CAF50; /* ✅ 초록 포인트 */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #3e8e41; /* ✅ hover 시 진한 초록 */
+}
+
+.search-section {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.movein-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  color: black;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.movein-table th,
+.movein-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.badge-approved {
+  background-color: #4CAF50; /* ✅ 승인 배지도 초록 */
+  color: white;
+}
+
+.badge-pending {
+  background-color: #f0ad4e;
+  color: white;
+}
+
+.pagination {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  background: #eee;
+  color: black;
+  cursor: pointer;
+}
+
+.pagination button.active {
+  background: #4CAF50; /* ✅ 현재 페이지 초록 강조 */
+  color: white;
+}
+
+.username-highlight {
+  color: #4CAF50; /* ✅ 강조 텍스트도 초록으로 */
+  font-weight: bold;
+}

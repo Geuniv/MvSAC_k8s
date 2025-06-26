@@ -1,0 +1,37 @@
+.searchbar-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.search-input,
+.date-input,
+.select-box {
+  padding: 8px 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: white;
+  color: black;
+}
+
+.date-separator {
+  margin: 0 5px;
+  font-weight: bold;
+}
+
+.reset-btn {
+  padding: 8px 16px;
+  background-color: #4CAF50;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.reset-btn:hover {
+  background-color: #4CAF50;
+}

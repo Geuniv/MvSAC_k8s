@@ -1,0 +1,92 @@
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  backdrop-filter: blur(3px);
+}
+
+.popup-content {
+  background-color: #ffffff;
+  color: #333;
+  padding: 30px 40px;
+  width: 420px;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.popup-content h3 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: #4CAF50; /* ✅ 초록색으로 변경 */
+  text-align: center;
+}
+
+.popup-content p {
+  margin-bottom: 12px;
+  font-size: 1rem;
+}
+
+.popup-content .form-row {
+  margin-bottom: 16px;
+}
+
+.popup-content label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.popup-content input {
+    color: black;
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  font-size: 1rem;
+}
+
+.popup-content input:focus {
+  outline: none;
+  border-color: #4CAF50; /* ✅ 초록색 */
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2); /* ✅ 초록 그림자 */
+}
+
+.popup-content button {
+  display: inline-block;
+  margin: 10px 5px 0;
+  padding: 10px 20px;
+  background-color: #4CAF50; /* ✅ 초록색 */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.popup-content button:hover {
+  background-color: #3e8e41; /* ✅ hover 초록색 진하게 */
+}

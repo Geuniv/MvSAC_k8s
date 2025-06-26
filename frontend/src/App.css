@@ -1,0 +1,156 @@
+#root {
+  width: 80%;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  background-color: white; /* 배경 흰색 */
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #90ee90aa); /* 연두색 포인트 */
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #90ee90aa); /* 연두색 포인트 */
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+a,
+a:visited {
+  color: #333;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #90ee90;
+  text-decoration: none;
+}
+
+a:active {
+  color: #555;
+}
+
+.topnav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  padding: 0 30px;
+  background-color: #90ee90; /* 연두색 배경 */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 999;
+  box-sizing: border-box;
+}
+
+.topnav a,
+.topnav button {
+  color: black;
+  text-decoration: none;
+  padding: 8px 16px;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.topnav .title {
+  font-weight: bold;
+}
+
+.nav-right .dropbtn {
+  color: black;
+}
+
+.user-profile {
+  background-color: #f0f0f0;
+  color: #90ee90;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background-color: #f0f0f0;
+  color: #90ee90;
+  padding: 6px 12px;
+  font-weight: bold;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  position: absolute;
+  right: 0;
+  background-color: white;
+  min-width: 120px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.dropdown-content a,
+.dropdown-content button {
+  color: black;
+  padding: 10px 16px;
+  text-decoration: none;
+  display: block;
+  background: white;
+  border: none;
+  width: 100%;
+  text-align: left;
+  font-size: 14px;
+}
+
+.dropdown-content a:hover,
+.dropdown-content button:hover {
+  background-color: #e0ffe0; /* 연두 계열 hover */
+}
+
+.logo-img {
+  height: 40px;
+  vertical-align: middle;
+}
+
+body {
+  margin: 0;
+  padding-top: 60px;
+  box-sizing: border-box;
+  background-color: white; /* 전체 배경 흰색 */
+}

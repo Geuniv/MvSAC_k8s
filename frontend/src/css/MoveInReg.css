@@ -1,0 +1,57 @@
+/* MoveInReg.css */
+
+.moveinreg-container {
+  color: black;
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.moveinreg-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.moveinreg-form input {
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+  background-color: white;
+  color: black;
+}
+
+.moveinreg-form input::placeholder {
+  color: #aaa;
+}
+
+.submit-btn {
+  padding: 12px;
+  background-color: #4CAF50; /* ✅ 초록색으로 변경 */
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #3e8e41; /* ✅ hover 초록색으로 변경 */
+}
+
+.rrn-group {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.half-input {
+  width: 50%;
+}

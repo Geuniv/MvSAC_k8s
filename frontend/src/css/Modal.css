@@ -1,0 +1,80 @@
+/* 공통 팝업 스타일 */
+.popup {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  width: 400px;
+  max-height: 80vh;
+  overflow-y: auto;
+  color: black;
+  box-sizing: border-box;
+}
+
+.popup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* 모든 인풋 기본 스타일 */
+.popup-form input {
+  color: black;
+  padding: 10px 14px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 90%;
+  box-sizing: border-box;
+}
+
+/* 주민번호 그룹 */
+.rrn-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+/* 주민번호 input만 너비 줄임 */
+.popup-form .half-input {
+  width: 42%;
+}
+
+/* 중간 하이픈 */
+.popup-form span {
+  line-height: 2.4;
+  font-size: 18px;
+}
+
+/* 버튼 스타일 (세로 배치용 - width: 100%) */
+.submit-btn,
+.cancel-btn {
+  width: 100%;
+  padding: 12px 0;
+  font-size: 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.submit-btn {
+  background-color: #4CAF50; /* ✅ 초록색으로 변경 */
+  color: white;
+}
+
+.cancel-btn {
+  background-color: #ddd;
+  color: #333;
+}
