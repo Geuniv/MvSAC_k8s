@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mvsac-k8s-deployment
+  namespace: sesac
+  labels:
+    app: mvsac_k8s
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: mvsac_k8s
+      tier: backend
+  template:
+    metadata:
+      name: mvsac-k8s-pod
+      labels:
+        app: mvsac_k8s
+        tier: backend
+    spec:
+      containers:
+        - name: mvsac-k8s-container
+          image: docker.io/geuniv/mvsac_k8s:v1  # 실제 올린 이미지 주소
+          imagePullPolicy: IfNotPresent  # 노드에 이미지 있으면 pull 안 함
+          ports:
+            - containerPort: 8000
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "50m"
+            limits:
+              memory: "1Gi"
+              cpu: "500m"

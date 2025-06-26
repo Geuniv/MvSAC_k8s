@@ -1,5 +1,5 @@
 # 베이스 이미지로 Python 3.13.3 버전을 사용
-FROM python:3.13.3
+FROM python:3.13.3-slim
 
 
 # /sample-api 작업 디렉터를 생성
