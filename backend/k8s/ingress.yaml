@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: mvsac-k8s-ingress
+  namespace: sesac
+  annotations:
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-northeast-2:620486970504:certificate/51aa4fb5-80d9-41d8-8cc7-3bd0d7acb3a3  # << ACM 인증서 ARN
+    alb.ingress.kubernetes.io/backend-protocol: HTTP
+    alb.ingress.kubernetes.io/group.name: mvsac
+spec:
+  ingressClassName: alb
+  rules:
+    - host: api.sesacgeun.click   # << 연결할 도메인
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: mvsac-k8s-service
+                port:
+                  number: 80

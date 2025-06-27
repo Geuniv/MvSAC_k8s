@@ -4,11 +4,11 @@ metadata:
   name: mvsac-k8s-service
   namespace: sesac
 spec:
-  type: LoadBalancer
+  type: ClusterIP   # LoadBalancer → ClusterIP 로 변경
   selector:
     app: mvsac_k8s
     tier: backend
   ports:
     - protocol: TCP
-      port: 80         # 클러스터 외부에서 접근할 포트
-      targetPort: 8000 # 컨테이너에서 열어둔 포트 (uvicorn 8000)
+      port: 80         # 클러스터 내에서 접근할 포트
+      targetPort: 8000 # 컨테이너 포트 (uvicorn)
