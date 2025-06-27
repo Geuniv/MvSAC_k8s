@@ -1,0 +1,34 @@
+name: React-CI/CD
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  cicd:
+    runs-on: ubuntu-latest
+
+    # 내 프로젝트는 루트 디렉토리 안에 frontend 디렉토리가 있어서 명시해줘야함
+    defaults:
+      run:
+        working-directory: ./frontend  # <== 요거 추가!
+    
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: "main"
+      - run: npm ci
+      - run: npm run test
+      - run: npm run build
+      - name: deploy to s3
+        uses: jakejarvis/s3-sync-action@master
+        with:
+          args: --delete
+        env:
+          AWS_S3_BUCKET: ${{ secrets.S3_BUCKET }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.S3_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.S3_SECRET_ACCESS_KEY }}
+          AWS_REGION: "ap-northeast-2"
+          # SOURCE_DIR: "dist"
+          SOURCE_DIR: "./frontend/dist" # 프로젝트 구조로 인해 변경
