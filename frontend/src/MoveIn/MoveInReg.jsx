@@ -39,7 +39,8 @@ export default function MoveInRegModal({ onClose, onRegister }) {
       // const res = await axios.post("http://localhost:8000/movein/", form, {
       // 로드밸런서 엔드포인트로 변경
       // const res = await axios.post("http://sesac-lb-879754776.ap-northeast-2.elb.amazonaws.com/movein/", form, {
-      const res = await axios.post("https://sesacgeun.click/movein/", form, {
+      // const res = await axios.post("https://sesacgeun.click/movein/", form, {
+      const res = await axios.post("https://api.sesacgeun.click/movein/", form, {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${window.sessionStorage.getItem("access_token")}`

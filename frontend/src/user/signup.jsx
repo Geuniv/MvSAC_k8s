@@ -42,7 +42,8 @@ export default function Signup() {
         axios
             // .post("http://localhost:8000/users/signup", formData, {
             // .post("http://sesac-lb-879754776.ap-northeast-2.elb.amazonaws.com/users/signup", formData, {
-            .post("https://sesacgeun.click/users/signup", formData, {
+            // .post("https://sesacgeun.click/users/signup", formData, {
+            .post("https://api.sesacgeun.click/users/signup", formData, {
                 headers: {
                     "Content-Type": "multipart/form-data",
                     "Authorization": `Bearer ${sessionStorage.getItem("access_token")}`

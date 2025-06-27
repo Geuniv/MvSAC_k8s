@@ -27,7 +27,8 @@ const UserList = () => {
 
     // axios.get('http://localhost:8000/users/', {
     // axios.get('http://sesac-lb-879754776.ap-northeast-2.elb.amazonaws.com/users/', {
-    axios.get('https://sesacgeun.click/users/', {
+    // axios.get('https://sesacgeun.click/users/', {
+    axios.get('https://api.sesacgeun.click/users/', {
       headers: {
         Authorization: `Bearer ${token}`,
       }
@@ -46,7 +47,8 @@ const UserList = () => {
     if (window.confirm("정말로 이 사원을 삭제하시겠습니까?")) {
       // axios.delete(`http://localhost:8000/users/${userId}`, {
       // axios.delete(`http://sesac-lb-879754776.ap-northeast-2.elb.amazonaws.com/users/${userId}`, {
-      axios.delete(`https://sesacgeun.click/users/${userId}`, {
+      // axios.delete(`https://sesacgeun.click/users/${userId}`, {
+      axios.delete(`https://api.sesacgeun.click/users/${userId}`, {
         headers: {
           Authorization: `Bearer ${window.sessionStorage.getItem("access_token")}`,
         },

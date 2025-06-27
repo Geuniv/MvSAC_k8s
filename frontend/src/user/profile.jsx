@@ -13,7 +13,8 @@ export default function Profile() {
     useEffect(() => {
         // axios.get("http://localhost:8000/users/profile", {
         // axios.get("http://sesac-lb-879754776.ap-northeast-2.elb.amazonaws.com/profile", {
-        axios.get("https://sesacgeun.click/profile", {
+        // axios.get("https://sesacgeun.click/profile", {
+        axios.get("https://api.sesacgeun.click/users/profile", {
             headers: { Authorization: `Bearer ${token}` }
         })
         .then(res => {
@@ -36,7 +37,8 @@ export default function Profile() {
         try {
             // await axios.put("http://localhost:8000/users/profile", formData, {
             // await axios.put("http://sesac-lb-879754776.ap-northeast-2.elb.amazonaws.com/users/profile", formData, {
-            await axios.put("https://sesacgeun.click/users/profile", formData, {
+            // await axios.put("https://sesacgeun.click/users/profile", formData, {
+            await axios.put("https://api.sesacgeun.click/users/profile", formData, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                     "Content-Type": "multipart/form-data"

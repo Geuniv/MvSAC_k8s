@@ -24,7 +24,8 @@ export default function Login() {
     axios
       // .post("http://localhost:8000/users/signin/",
       // .post("http://sesac-lb-879754776.ap-northeast-2.elb.amazonaws.com/users/signin/", 
-      .post("https://sesacgeun.click/users/signin/", 
+      // .post("https://sesacgeun.click/users/signin/", 
+      .post("https://api.sesacgeun.click/users/signin/",
         // { username, password },
         params,
         { headers: { "Content-Type": "application/x-www-form-urlencoded" } })

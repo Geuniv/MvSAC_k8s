@@ -12,7 +12,8 @@ function MoveInPopup({ data, onClose, onUpdate }) {
       try {
         // const res = await axios.get(`http://localhost:8000/movein/${data.id}`, {
         // const res = await axios.get(`http://sesac-lb-879754776.ap-northeast-2.elb.amazonaws.com/movein/${data.id}`, {
-        const res = await axios.get(`https://sesacgeun.click/movein/${data.id}`, {
+        // const res = await axios.get(`https://sesacgeun.click/movein/${data.id}`, {
+        const res = await axios.get(`https://api.sesacgeun.click/movein/${data.id}`, {
           headers: {
             Authorization: `Bearer ${window.sessionStorage.getItem("access_token")}`,
           },
@@ -39,7 +40,8 @@ function MoveInPopup({ data, onClose, onUpdate }) {
       // const res = await axios.put(`http://localhost:8000/movein/${data.id}`, updatedData);
       // 로드밸런서 엔드포인트로 변경
       // const res = await axios.put(`http://sesac-lb-879754776.ap-northeast-2.elb.amazonaws.com/movein/${data.id}`, updatedData);
-      const res = await axios.put(`https://sesacgeun.click/movein/${data.id}`, updatedData);
+      // const res = await axios.put(`https://sesacgeun.click/movein/${data.id}`, updatedData);
+      const res = await axios.put(`https://api.sesacgeun.click/movein/${data.id}`, updatedData);
       alert("전입신청 정보가 수정되었습니다.");
       setIsEditMode(false);
       if (onUpdate) onUpdate(res.data);
@@ -57,7 +59,8 @@ function MoveInPopup({ data, onClose, onUpdate }) {
         // `http://localhost:8000/movein/approval/${data.id}`,
         // 로드밸런서 엔드포인트로 변경
         // `http://sesac-lb-879754776.ap-northeast-2.elb.amazonaws.com/movein/approval/${data.id}`,
-        `https://sesacgeun.click/movein/approval/${data.id}`,
+        // `https://sesacgeun.click/movein/approval/${data.id}`,
+        `https://api.sesacgeun.click/movein/approval/${data.id}`,
         {},
         {
           headers: {

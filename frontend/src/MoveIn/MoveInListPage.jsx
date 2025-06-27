@@ -28,7 +28,8 @@ function MoveInListPage() {
     axios
       // .get("http://localhost:8000/movein/", {
       // .get("http://sesac-lb-879754776.ap-northeast-2.elb.amazonaws.com/movein/", {
-      .get("https://sesacgeun.click/movein/", {
+      // .get("https://sesacgeun.click/movein/", {
+      .get("https://api.sesacgeun.click/movein/", {
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },

@@ -21,7 +21,8 @@ spec:
       containers:
         - name: mvsac-k8s-container
           image: docker.io/geuniv/mvsac_k8s:v1  # 실제 올린 이미지 주소
-          imagePullPolicy: IfNotPresent  # 노드에 이미지 있으면 pull 안 함
+          # imagePullPolicy: IfNotPresent  # 노드에 이미지 있으면 pull 안 함
+          imagePullPolicy: Always  # 노드에 이미지 있으면 pull 안 함
           ports:
             - containerPort: 8000
           resources:
