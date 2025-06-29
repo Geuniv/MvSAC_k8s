@@ -11,20 +11,23 @@ metadata:
     alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-northeast-2:620486970504:certificate/51aa4fb5-80d9-41d8-8cc7-3bd0d7acb3a3  # << ACM 인증서 ARN
     alb.ingress.kubernetes.io/backend-protocol: HTTP
     alb.ingress.kubernetes.io/group.name: mvsac
-    kubernetes.io/ingress.class: alb
-  finalizers:
+finalizers:
   - ingress.k8s.aws/resources
-  labels:
-    app: argocd
+  ㅣabels:
+    app: velog-test
     tier: backend
 spec:
+  ingressClassName: alb
   rules:
-  - http:
-      paths:
-      - backend:
-          service:
-            name: argocd-server # 연결할 서비스 (이부분은 고정)
-            port:
-              number: 80 # (이부분도 고정)
+    - host: argocd.sesacgeun.click
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: argocd-server
+                port:
+                  number: 80   # 또는 443
         path: /*
         pathType: ImplementationSpecific
