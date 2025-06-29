@@ -8,8 +8,8 @@ from database.connection import conn
 from routes.MoveInInfo import moveininfo_router
 from routes.users import user_router
 from database.connection import conn
-from fastapi.middleware.trustedhost import TrustedHostMiddleware
-from fastapi.middleware.httpsredirect import HTTPSRedirectMiddleware
+# from fastapi.middleware.trustedhost import TrustedHostMiddleware
+# from fastapi.middleware.httpsredirect import HTTPSRedirectMiddleware
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -27,9 +27,9 @@ app = FastAPI(lifespan=lifespan)
 
 # app = FastAPI()
 
-# 아래 두 줄로 ALB의 HTTPS 처리 뒤 프록시 환경을 인정하게 함
-app.add_middleware(TrustedHostMiddleware, allowed_hosts=["*"])
-app.add_middleware(HTTPSRedirectMiddleware)
+# # 아래 두 줄로 ALB의 HTTPS 처리 뒤 프록시 환경을 인정하게 함
+# app.add_middleware(TrustedHostMiddleware, allowed_hosts=["*"])
+# app.add_middleware(HTTPSRedirectMiddleware)
 
 @app.get("/")
 async def root():
