@@ -11,9 +11,9 @@ metadata:
     alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-northeast-2:620486970504:certificate/51aa4fb5-80d9-41d8-8cc7-3bd0d7acb3a3  # << ACM 인증서 ARN
     alb.ingress.kubernetes.io/backend-protocol: HTTP
     alb.ingress.kubernetes.io/group.name: mvsac
-finalizers:
-  - ingress.k8s.aws/resources
-ㅣabels:
+  finalizers:
+    - ingress.k8s.aws/resources
+  ㅣabels:
     app: velog-test
     tier: backend
 spec:
