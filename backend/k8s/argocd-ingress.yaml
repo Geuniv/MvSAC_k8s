@@ -16,7 +16,7 @@ spec:
     - host: argocd.sesacgeun.click
       http:
         paths:
-          - path: /
+          - path: /healthz
             pathType: Prefix
             backend:
               service:
