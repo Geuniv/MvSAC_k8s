@@ -17,8 +17,6 @@ metadata:
   labels:
     app: argocd
     tier: backend
-  name: argocd-ingress # 인그레스 이름 정하기
-  namespace: argocd    # 설치할 네임스페이스
 spec:
   rules:
   - http:
