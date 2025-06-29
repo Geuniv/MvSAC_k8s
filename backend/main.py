@@ -34,7 +34,8 @@ app.add_middleware(
     # CORS 설정
     CORSMiddleware,
     # allow_origins=["http://localhost:5173", "http://127.0.0.1:5173", "https://sesacgeun.click"], # 허용할 도메인
-    allow_origins=["https://sesacgeun.click", "https://www.sesacgeun.click", "https://api.sesacgeun.click"], # 허용할 도메인 수정
+    # allow_origins=["https://sesacgeun.click", "https://www.sesacgeun.click", "https://api.sesacgeun.click"], # 허용할 도메인 수정
+    allow_origins=["*"], # 모든 도메인 허용
     allow_credentials=True,
     allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allow_headers=["*"], # 모든 헤더 허용
