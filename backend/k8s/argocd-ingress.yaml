@@ -5,21 +5,28 @@ metadata:
   namespace: argocd
   annotations:
     alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/healthcheck-path: /
     alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
     alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-northeast-2:620486970504:certificate/51aa4fb5-80d9-41d8-8cc7-3bd0d7acb3a3  # << ACM 인증서 ARN
     alb.ingress.kubernetes.io/backend-protocol: HTTP
     alb.ingress.kubernetes.io/group.name: mvsac
+    kubernetes.io/ingress.class: alb
+  finalizers:
+  - ingress.k8s.aws/resources
+  labels:
+    app: argocd
+    tier: backend
+  name: argocd-ingress # 인그레스 이름 정하기
+  namespace: argocd    # 설치할 네임스페이스
 spec:
-  ingressClassName: alb
   rules:
-    - host: argocd.sesacgeun.click
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: argocd-server
-                port:
-                  number: 80   # 또는 443
+  - http:
+      paths:
+      - backend:
+          service:
+            name: argocd-server # 연결할 서비스 (이부분은 고정)
+            port:
+              number: 80 # (이부분도 고정)
+        path: /*
+        pathType: ImplementationSpecific
