@@ -13,7 +13,7 @@ metadata:
     alb.ingress.kubernetes.io/group.name: mvsac
 finalizers:
   - ingress.k8s.aws/resources
-  ㅣabels:
+ㅣabels:
     app: velog-test
     tier: backend
 spec:
